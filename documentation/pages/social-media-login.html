@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LION STORE - Documentation</title>
+    <link rel="stylesheet" href="../material.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="icon" type="image/svg" href="../images/favicon.svg">
+</head>
+<body>
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+
+        <!-- Sidebar -->
+        <div class="demo-drawer mdl-layout__drawer">
+            <span style="padding-left: 15px" class="mdl-layout-title">Documentation</span>
+            <nav class="demo-navigation mdl-navigation">
+                <a class="mdl-navigation__link" href="../index.html"><i class="material-icons" role="presentation">home</i>Introduction</a>
+                <a class="mdl-navigation__link" href="./programs.html"><i class="material-icons" role="presentation">fact_check</i>Recommended programs</a>
+                <a class="mdl-navigation__link" href="./server.html"><i class="material-icons" role="presentation">dns</i>Preparing server</a>
+                <a class="mdl-navigation__link" href="./database.html"><i class="material-icons" role="presentation">add_link</i>Creating database</a>
+                <a class="mdl-navigation__link" href="./nginx.html"><i class="material-icons" role="presentation">http</i>Config Nginx</a>
+                <a class="mdl-navigation__link" href="./installation.html"><i class="material-icons" role="presentation">flash_on</i>Installation</a>
+                <a class="mdl-navigation__link" href="./cron-job.html"><i class="material-icons" role="presentation">dynamic_form</i>Cron Job</a>
+                <a class="mdl-navigation__link is-active" href="./social-media-login.html"><i class="material-icons" role="presentation">share</i>Social media login</a>
+                <a class="mdl-navigation__link" href="./paypal.html"><i class="material-icons" role="presentation">paypal</i>Config PayPal</a>
+                <a class="mdl-navigation__link" href="./stripe.html"><i class="material-icons" role="presentation">credit_card</i>Config Stripe</a>
+                <a class="mdl-navigation__link" href="./facebook-pixel.html"><i class="material-icons" role="presentation">facebook</i>Config Facebook Pixel</a>
+                <a class="mdl-navigation__link" href="./snapchat-pixel.html"><i class="material-icons" role="presentation">snapchat</i>Config Snapchat Pixel</a>
+                <a class="mdl-navigation__link" href="./tiktok-pixel.html"><i class="material-icons" role="presentation">tiktok</i>Config TikTok Pixel</a>
+                <a class="mdl-navigation__link" href="./google-tag-manager.html"><i class="material-icons" role="presentation">public</i>Google Tag Manager</a>
+                <a class="mdl-navigation__link" href="./recaptcha.html"><i class="material-icons" role="presentation">android</i>Config reCaptcha</a>
+                <a class="mdl-navigation__link" href="./twilio.html"><i class="material-icons" role="presentation">textsms</i>Config Twilio</a>
+            </nav>
+        </div>
+
+        <!-- Content -->
+        <main class="mdl-layout__content content" style="padding-bottom: 100px">
+
+            <div class="docs-text-styling docs-readme">
+                <h2 id="introduction">Social media login</h2>
+
+                <p>
+                    Follow these steps to allow your customers to sign in using their social media accounts. Right now only <span style="color: #4267B2">Facebook</span>, <span style="color: #db3236">Google</span> and <span style="color: #00acee">Twitter</span> are supported, but if you want another one, just contact me and I will be glad to help you
+                </p>
+
+                <!-- Facebook -->
+                <p><strong style="color: #000">1. Facebook</strong></p>
+
+                <p>- First sign in to your Facebook account and then go to developers page <a target="_blank" href="https://developers.facebook.com/apps">https://developers.facebook.com/apps</a></p>
+
+                <p>- Then click "Create App" green button as shown in this picture:</p>
+                <img src="../images/chrome_4XgXxNPZ3b.png">
+
+                <p>- Then a new popup will show to select type of app, select <strong>Consumer</strong> and click "Continue"</p>
+                <img src="../images/chrome_hikjkKKDYW.png">
+
+                <p>- Now enter your app name and email address and also business account if exists and click "Continue"</p>
+                <img src="../images/chrome_RUDMnclyq8.png">
+
+                <p>- Once your app is created, go to left sidebar and select "Facebook Login" => "Settings" </p>
+                <img src="../images/chrome_HhZy5kvRcb.png">
+
+                <p>- Now if you saw this red error click "Get Advanced Access" </p>
+                <img src="../images/chrome_IMFyuJf5ns.png">
+
+                <p>- Now we need access to two options "public_profile" and "email" as you can see below </p>
+                <img src="../images/chrome_FUzONiJYxM.png">
+                <img src="../images/chrome_io4Z8Kx9Bb.png">
+
+                <p>- After click on each button and confirm access </p>
+                <img src="../images/chrome_CfdREEj76S.png">
+
+                <p>- Now let's get back to "Facebook Login" => "Settings" and add redirect url as you can see in the photo below, change only "your-domain.com" and keep "/auth/facebook/callback" </p>
+                <img src="../images/mVaR30oi3J.png">
+
+                <p>- After that you will see a message above tells you to complete Data Use Checkup, click "Get Started" </p>
+                <img src="../images/chrome_bLBzZ82MzO.png">
+
+                <p>- And then check all checkboxes and click "Continue" then "Submit" </p>
+                <img src="../images/chrome_S6rTktxBS7.png">
+                <img src="../images/chrome_yb6Qu6zFiT.png">
+                <img src="../images/chrome_XNWkQ2VAun.png">
+
+                <p>- Now go to "Settings" => "Basic" </p>
+                <img src="../images/chrome_5MBDA9Mttq.png">
+
+                <p>- Then enter all the data you can see below like "Privacy Policy URL", "Terms page" "App Logo"... </p>
+                <img src="../images/chrome_uIr0N3Vfdv.png">
+
+                <p>- After that you are ready to change to live mode and getting started </p>
+                <img src="../images/chrome_7wJM6ZhdVp.png">
+
+                <p>- And finally copy your app id and app secret to your dashboard then auth settings <br> <a target="_blank" href="https://your-domain.com/dashboard/settings/auth">https://your-domain.com/dashboard/settings/auth</a> </p>
+                <img src="../images/chrome_NlZF9r5RHa.png">
+
+                <!-- Twitter -->
+                <p><strong style="color: #000">2. Twitter</strong></p>
+
+                <p>- Sign in to your Twitter account and then go to developer page <a href="https://developer.twitter.com/en/portal/projects-and-apps" target="_blank">https://developer.twitter.com/en/portal/projects-and-apps</a> and click "Create app" </p>
+                <img src="../images/chrome_zY1n6NwccF.png">
+
+                <p>- Choose your app name and click "Next" </p>
+                <img src="../images/chrome_GC54AtTok4.png">
+
+                <p>- Now you can see your app key and app secret copy them to your dashboard => auth settings <br> <a href="https://your-domain.com/dashboard/settings/auth">https://your-domain.com/dashboard/settings/auth</a> </p>
+                <img src="../images/chrome_4si5eNy9DT.png">
+
+                <p>- Now go to your app settings and choose "Authentication settings" then click "Edit" </p>
+                <img src="../images/chrome_zs3JYMqOLq.png">
+
+                <p>- Check all and enter callback url change only "your-domain.com" and edit all fields then click "Save" </p>
+                <img src="../images/chrome_Y70jV75j2D.png">
+                <img src="../images/chrome_FHZgrriApe.png">
+
+                <!-- Google -->
+                <p><strong style="color: #000">3. Google</strong></p>
+
+                <p>- Once you’re logged in with Google, open the <a href="https://console.cloud.google.com/apis/dashboard" target="_blank">Google Developers console</a>. That should open up the Google Dashboard page, as shown in the following screenshot. </p>
+                <img src="../images/chrome_40eoLrRMjD.png">
+
+                <p>- From the top-left menu, click on the Select a project link. That should open up a popup, as shown in the following screenshot and click "NEW PROJECT". </p>
+                <img src="../images/chrome_soG06xDoGf.png">
+
+                <p>- Enter project name and click "Create" </p>
+                <img src="../images/chrome_bmRPapLZGy.png">
+
+                <p>- You will be redirected to the&nbsp;<strong>Dashboard</strong>&nbsp;page. Click on the&nbsp;<strong>Credentials</strong>&nbsp;from the left sidebar, and click <strong> Configure consent screen </strong> button</p>
+                <img src="../images/chrome_xBR1JW3DF0.png">
+
+                <p>- Choose "External User Type" and click "Create"</p>
+                <img src="../images/chrome_uzOKUWnlRA.png">
+
+                <p>- Now provide a name and email for your app and enter all required data in this page and click "Save and Continue"</p>
+                <img src="../images/chrome_Rwl1QUn9wl.png">
+
+                <p>- And now click on "Add or Remove Scopes"</p>
+                <img src="../images/chrome_kRdtRxcEtF.png">
+
+                <p>- A popup will show, select like this screenshot and scroll down then click <strong>Update</strong> after that click "Save and Continue"</p>
+                <img src="../images/chrome_R8BtFKw3ay.png">
+
+                <p>- Next click <strong>Save and Continue</strong></p>
+                <img src="../images/chrome_guutw0RLRA.png">
+
+                <p>- navigate to the <strong>“Credentials”</strong> tab in the sidebar. Under “Create Credentials”, select “OAuth client ID”.</p>
+                <img src="../images/chrome_dKRx9RbyuI.png">
+
+                <p>- Select "Web application" and enter any name then enter your domain url and callback url, change only <strong>your-domain.com</strong></p>
+                <img src="../images/chrome_lQ3PY7tk5r.png">
+                <img src="../images/chrome_fCAiDltv5s.png">
+
+                <p>- Now you can see your app id and secret key, go to your dashboard and then auth settings and put them <br> <a href="https://your-domain.com/dashboard/settings/auth" target="_blank">https://your-domain.com/dashboard/settings/auth</a></p>
+                <img src="../images/chrome_YxoDP88wSL.png">
+
+            </div>
+
+        </main>
+
+    </div>
+</body>
+</html>

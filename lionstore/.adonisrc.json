@@ -1,0 +1,89 @@
+{
+  "typescript": true,
+  "commands": [
+    "./commands",
+    "@adonisjs/core/build/commands",
+    "@adonisjs/repl/build/commands",
+    "@adonisjs/lucid/build/commands",
+    "@adonisjs/mail/build/commands",
+    "adonis5-scheduler/build/commands"
+  ],
+  "exceptionHandlerNamespace": "App/Exceptions/Handler",
+  "aliases": {
+    "App": "app",
+    "Config": "config",
+    "Database": "database",
+    "Contracts": "contracts"
+  },
+  "preloads": [
+    "./start/routes",
+    "./start/kernel",
+    "./start/view",
+    {
+      "file": "./start/events",
+      "environment": [
+        "console",
+        "repl",
+        "web"
+      ]
+    }
+  ],
+  "providers": [
+    "./providers/AppProvider",
+    "@adonisjs/core",
+    "@adonisjs/session",
+    "@adonisjs/view",
+    "@adonisjs/shield",
+    "@adonisjs/lucid",
+    "@adonisjs/auth",
+    "@adonisjs/redis",
+    "@adonisjs/ally",
+    "@adonisjs/mail",
+    "adonis5-scheduler"
+  ],
+  "metaFiles": [
+    {
+      "pattern": "public/**",
+      "reloadServer": false
+    },
+    {
+      "pattern": "resources/**",
+      "reloadServer": false
+    },
+    {
+      "pattern": ".nuxt/**",
+      "reloadServer": false
+    },
+    {
+      "pattern": ".env",
+      "reloadServer": false
+    },
+    {
+      "pattern": ".editorconfig",
+      "reloadServer": false
+    },
+    {
+      "pattern": ".eslintrc.js",
+      "reloadServer": false
+    },
+    {
+      "pattern": ".gitignore",
+      "reloadServer": false
+    },
+    {
+      "pattern": "jsconfig.json",
+      "reloadServer": false
+    },
+    {
+      "pattern": "nuxt.config.js",
+      "reloadServer": false
+    },
+    {
+      "pattern": "ecosystem.config.js",
+      "reloadServer": false
+    }
+  ],
+  "aceProviders": [
+    "@adonisjs/repl"
+  ]
+}

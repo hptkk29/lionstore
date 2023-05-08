@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LION STORE - Documentation</title>
+    <link rel="stylesheet" href="../material.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="icon" type="image/svg" href="../images/favicon.svg">
+</head>
+<body>
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+
+        <!-- Sidebar -->
+        <div class="demo-drawer mdl-layout__drawer">
+            <span style="padding-left: 15px" class="mdl-layout-title">Documentation</span>
+            <nav class="demo-navigation mdl-navigation">
+                <a class="mdl-navigation__link" href="../index.html"><i class="material-icons" role="presentation">home</i>Introduction</a>
+                <a class="mdl-navigation__link" href="./programs.html"><i class="material-icons" role="presentation">fact_check</i>Recommended programs</a>
+                <a class="mdl-navigation__link" href="./server.html"><i class="material-icons" role="presentation">dns</i>Preparing server</a>
+                <a class="mdl-navigation__link is-active" href="./database.html"><i class="material-icons" role="presentation">add_link</i>Creating database</a>
+                <a class="mdl-navigation__link" href="./nginx.html"><i class="material-icons" role="presentation">http</i>Config Nginx</a>
+                <a class="mdl-navigation__link" href="./installation.html"><i class="material-icons" role="presentation">flash_on</i>Installation</a>
+                <a class="mdl-navigation__link" href="./cron-job.html"><i class="material-icons" role="presentation">dynamic_form</i>Cron Job</a>
+                <a class="mdl-navigation__link" href="./social-media-login.html"><i class="material-icons" role="presentation">share</i>Social media login</a>
+                <a class="mdl-navigation__link" href="./paypal.html"><i class="material-icons" role="presentation">paypal</i>Config PayPal</a>
+                <a class="mdl-navigation__link" href="./stripe.html"><i class="material-icons" role="presentation">credit_card</i>Config Stripe</a>
+                <a class="mdl-navigation__link" href="./facebook-pixel.html"><i class="material-icons" role="presentation">facebook</i>Config Facebook Pixel</a>
+                <a class="mdl-navigation__link" href="./snapchat-pixel.html"><i class="material-icons" role="presentation">snapchat</i>Config Snapchat Pixel</a>
+                <a class="mdl-navigation__link" href="./tiktok-pixel.html"><i class="material-icons" role="presentation">tiktok</i>Config TikTok Pixel</a>
+                <a class="mdl-navigation__link" href="./google-tag-manager.html"><i class="material-icons" role="presentation">public</i>Google Tag Manager</a>
+                <a class="mdl-navigation__link" href="./recaptcha.html"><i class="material-icons" role="presentation">android</i>Config reCaptcha</a>
+                <a class="mdl-navigation__link" href="./twilio.html"><i class="material-icons" role="presentation">textsms</i>Config Twilio</a>
+            </nav>
+        </div>
+
+        <!-- Content -->
+        <main class="mdl-layout__content content" style="padding-bottom: 100px">
+
+            <div class="docs-text-styling docs-readme">
+                <h2 id="introduction">Create a database</h2>
+
+                <p>
+                    After we prepared our server, we can now create a database and import SQL file included
+                </p>
+
+                <iframe width="100%" height="350" src="https://www.youtube.com/embed/J8tOQJswaQI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <div class="code-with-text" style="margin-top: 20px;">
+                    Login to your mysql (root is default username):
+                    <pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> mysql -u <span class="token function">root</span> -p</code></pre>
+                </div>
+
+                <div class="code-with-text" style="margin-top: 20px;">
+                    Create a database (change <strong>YOUR_DATABASE_NAME</strong> with your database name):
+                    <pre class="language-bash"><code class="language-bash">create database <span class="token function">YOUR_DATABASE_NAME</span>;</code></pre>
+                </div>
+
+                <div class="code-with-text" style="margin-top: 20px;">
+                    Now run the following command one by one, don't forget to change <strong>YOUR_USERNAME_HERE</strong> with your database username (any name) and <strong>YOUR_PASSWORD_HERE</strong> with a strong database password.
+
+                    <pre class="language-bash"><code class="language-bash">CREATE USER '<span class="token function">YOUR_USERNAME_HERE</span>'@'localhost' IDENTIFIED BY '<span class="token function">YOUR_PASSWORD_HERE</span>';</code></pre>
+
+                    <pre class="language-bash"><code class="language-bash">GRANT ALL PRIVILEGES ON *.* TO '<span class="token function">YOUR_USERNAME_HERE</span>'@'localhost' WITH GRANT OPTION;</code></pre>
+
+                    <pre class="language-bash"><code class="language-bash">FLUSH PRIVILEGES;</code></pre>
+
+                </div>
+
+                <div class="code-with-text" style="margin-top: 20px;">
+                    Change <strong>YOUR_DATABASE_NAME</strong> with your database name
+                    <pre class="language-bash"><code class="language-bash">use <span class="token function">YOUR_DATABASE_NAME</span>;</code></pre>
+                </div>
+
+                <div class="code-with-text" style="margin-top: 20px;">
+                    Upload "database.sql" file and run the following command
+                    <pre class="language-bash"><code class="language-bash">source <span class="token function">/usr/share/nginx/html/database.sql</span>;</code></pre>
+                </div>
+
+                <div class="code-with-text" style="margin-top: 20px;">
+                    Put this code in mysql config file, follow the video above to understand how: (dont forget [mysqld] before)
+                    <pre class="language-bash"><code class="language-bash">[mysqld]</code></pre>
+                    <pre class="language-bash"><code class="language-bash">sql_mode = STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION</code></pre>
+                </div>
+
+                <div class="code-with-text" style="margin-top: 20px;">
+                    Restart mysql service:
+                    <pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> systemctl <span class="token function">restart</span> mysqld</code></pre>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+</body>
+</html>
